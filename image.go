@@ -88,8 +88,8 @@ func pictableFromImage(m image.Image, usize uint) (Pictable, error) {
 		return nil, fmt.Errorf("Image dimensions %d x %d invalid", bounds.Max.X, bounds.Max.Y)
 	}
 
-	for rX := 0; rX < size; rX++ {
-		for rY := 0; rY < size; rY++ {
+	for rX := range size {
+		for rY := range size {
 			avgdata[rX][rY][0] = avgdata[rX][rY][0] / divisor
 			avgdata[rX][rY][1] = avgdata[rX][rY][1] / divisor
 			avgdata[rX][rY][2] = avgdata[rX][rY][2] / divisor
@@ -114,8 +114,8 @@ func diffPictables(left Pictable, right Pictable) (uint64, error) {
 	subdivisions := len(left)
 
 	var xdiff uint64
-	for rX := 0; rX < subdivisions; rX++ {
-		for rY := 0; rY < subdivisions; rY++ {
+	for rX := range subdivisions {
+		for rY := range subdivisions {
 			aa := left[rX][rY]
 			bb := right[rX][rY]
 

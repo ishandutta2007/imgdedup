@@ -104,8 +104,7 @@ func main() {
 
 	wg := sync.WaitGroup{}
 	for i := 0; i <= runtime.NumCPU()*2; i++ {
-		wg.Add(1)
-		go func() {
+		wg.Go(func() {
 			for {
 				imgpath, ok := <-fileChan
 				if !ok {
@@ -142,8 +141,7 @@ func main() {
 				bar.Add(1)
 			}
 
-			wg.Done()
-		}()
+		})
 	}
 
 	for _, imgpath := range fileList {

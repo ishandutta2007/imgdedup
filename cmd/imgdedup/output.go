@@ -29,7 +29,7 @@ func diff(imgdata map[string]*imgdedup.ImageInfo, tolerance uint64) []ImgDiff {
 	sort.Strings(fileList)
 
 	fileLength := len(fileList)
-	for i := 0; i < fileLength; i++ {
+	for i := range fileLength {
 		for j := i + 1; j < fileLength; j++ {
 
 			leftf := fileList[i]
