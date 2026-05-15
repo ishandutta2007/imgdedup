@@ -33,11 +33,11 @@ Detects duplications despite changes in
 
 Flags to compare images in your preferred difftool
 
-## Download
+## Installation
 
 ### Binaries
 	
-See: [Releases](https://github.com/donatj/imgdedup/releases).
+Precompiled binaries are available on [releases](https://github.com/donatj/imgdedup/releases).
 
 ### Compile
 
